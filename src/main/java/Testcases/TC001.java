@@ -57,7 +57,7 @@ import POM.Tab8OLD;
 import POM.Tab8SS;
 import POM.Tab9;
 
-@Ignore
+@Test
 public class TC001 extends LoginAndStart {
 
 	public static void Scenario1() throws Throwable {
