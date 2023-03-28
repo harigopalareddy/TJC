@@ -55,7 +55,7 @@ public class LoginAndStart {
 	public static void openapp(String Browser) throws Throwable {
 		path=System.getProperty("user.dir");
 		if(Browser.equalsIgnoreCase("Chrome")) {
-			System.setProperty("webdriver.chrome.driver", path+"\\utils\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver","utils\\chromedriver.exe");
 			driver=new ChromeDriver();
 		}
 		if(Browser.equalsIgnoreCase("Edge")) {
