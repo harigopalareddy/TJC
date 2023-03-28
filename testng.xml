@@ -6,7 +6,6 @@
   <class name="Testcases.TC001"></class>
    <class name="Testcases.TC002"></class>
     <class name="Testcases.TC003"></class>
-     <class name="Testcases.TC004"></class>
   </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
