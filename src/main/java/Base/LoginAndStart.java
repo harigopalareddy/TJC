@@ -4,6 +4,12 @@ package Base;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.Base64;
+import java.util.Locale;
+import java.util.regex.Matcher;
+
+import com.github.javafaker.Faker;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -12,6 +18,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.annotations.Test;
 
 public class LoginAndStart {
 	public static By username=By.id("MainContent__login_UserName");
@@ -53,13 +60,12 @@ public class LoginAndStart {
 	}
 
 	public static void openapp(String Browser) throws Throwable {
-		path=System.getProperty("user.dir");
 		if(Browser.equalsIgnoreCase("Chrome")) {
-			System.setProperty("webdriver.chrome.driver","utils/chromedriver.exe");
+			WebDriverManager.chromedriver().setup();
 			driver=new ChromeDriver();
 		}
 		if(Browser.equalsIgnoreCase("Edge")) {
-			System.setProperty("webdriver.edge.driver", path+"\\utils\\msedgedriver.exe");
+			WebDriverManager.edgedriver().setup();
 			driver=new EdgeDriver();
 		}
 		driver.manage().window().maximize();
@@ -68,5 +74,5 @@ public class LoginAndStart {
 		driver.findElement(password).sendKeys(data(1,1));
 		driver.findElement(loginbtn).click();
 		driver.findElement(startbtn).click();
-	}
+	}	
 }
