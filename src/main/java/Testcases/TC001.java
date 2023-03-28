@@ -1,6 +1,4 @@
 package Testcases;
-
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import Base.LoginAndStart;
